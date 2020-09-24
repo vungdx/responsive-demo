@@ -106,6 +106,7 @@ article img {
 .nav__check-input:checked ~ .overlay{
     display: block;
 }
+/* Đang gặp bug ở đây nè */
 .nav__check-input:checked ~ .nav__mobile{
     transform: translateX(0%);
 }
