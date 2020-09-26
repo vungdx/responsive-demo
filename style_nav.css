@@ -1,122 +1,120 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background-color: #fff;
+  margin: 0;
+  background-color: #fff;
 }
 
 .main {
-    width: 1200px;
-    min-height: 100vh;
-    max-width: 100%;
-    margin: auto;
-    padding-bottom: 20px;
+  width: 1200px;
+  min-height: 100vh;
+  max-width: 100%;
+  margin: auto;
+  padding-bottom: 20px;
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    height: 48px;
-    background-color: #333;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  background-color: #333;
 }
 
 .nav__list {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .nav__link {
-    text-decoration: none;
-    color: #fff;
-    margin-right: 48px;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 48px;
 }
 
 /* Article */
 h1 {
-    line-height: 2rem;
+  line-height: 2rem;
 }
 
 article {
-    padding: 0 16px;
-    line-height: 1.6rem;
+  padding: 0 16px;
+  line-height: 1.6rem;
 }
 
 article img {
-    width: 640px;
-    max-width: 100%;
-    display: block;
-    margin: 32px auto;
+  width: 640px;
+  max-width: 100%;
+  display: block;
+  margin: 32px auto;
 }
-
 
 /* Navar-icon css */
-.nav__bars-btn{
-    width: 28px;
-    height: 28px;
-    color: #fff;
-    display:none;
-    margin-left: 8px;
+.nav__bars-btn {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  display: none;
+  margin-left: 8px;
 }
-.overlay{
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: none;
-}
-
-.nav__mobile{
-    position: fixed;
-    top:0;
-    left:0;
-    bottom:0;
-    width: 320px;
-    max-width: 100%; /* Tránh trường hợp có màn hình nhỏ hơn 320px*/;
-    background-color: #fff;
-    /* MẶc định đầu vào; ông này trượt vào ngoài màn hình chứ không phải là display:none */
-    transform: translateX(-100%);
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
 }
 
-.nav__mobile-list{
-    margin-top:24px;
+.nav__mobile {
+  position: fixed;
+  border: 1px solid rgb(226, 88, 88);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 100%; /* Tránh trường hợp có màn hình nhỏ hơn 320px*/
+  background-color: #fff;
+  /* MẶc định đầu vào; ông này trượt vào ngoài màn hình chứ không phải là display:none */
+  transform: translateX(-100%);
 }
-.nav__mobile-link{
-    text-decoration: none;
-    list-style-type: none;
-    color: #333;
-    display: block;
-    padding: 8px 0;
-    font-size: 1.4rem;
-    font-family: sans-serif;
+
+.nav__mobile-list {
+  margin-top: 24px;
 }
-.nav__mobile-close{
-    color: #666;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    height: 28px;
-    width: 28px;
+.nav__mobile-link {
+  text-decoration: none;
+  list-style-type: none;
+  color: #333;
+  display: block;
+  padding: 8px 0;
+  font-size: 1.4rem;
+  font-family: sans-serif;
+}
+.nav__mobile-close {
+  color: #666;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 28px;
+  width: 28px;
 }
 
 /* Click button to show nav-mobile and overlay */
-.nav__check-input:checked ~ .overlay{
+.nav__check-input:checked ~ .overlay {
+  display: block
+}
+.nav__check-input:checked ~ .nav__mobile {
+  transform: translateX(0%)
+}
+
+@media (max-width: 1023px) {
+  .nav__bars-btn {
     display: block;
+  }
+  .nav__pc {
+    display: none;
+  }
 }
-/* Đang gặp bug ở đây nè */
-.nav__check-input:checked ~ .nav__mobile{
-    transform: translateX(0%);
-}
-
-@media (max-width:1023px){
-    .nav__bars-btn{
-        display:block
-    }
-    .nav__pc{
-        display:none;
-    }
-}
-
